@@ -332,7 +332,7 @@ start()
 			getversion
 			if (( $ios >= 9 )) && [[ "$( uname -p )" == "arm64" ]]; then
 				#check to see if it's been patched yet
-				if [[ "$( sha1sum /usr/bin/sbopenurl | egrep -o '[[:xdigit:]]{40}' )" != '09ff6dbc3b17caf619e21ba83cfc79879743e978' ]] || [[ ! -e /usr/bin/sbopenurl ]]; then
+				if [[ ! -e /usr/bin/sbopenurl ]]; then
 					smart_rm "/usr/bin/sbopenurl"
 					wget https://dl.dropboxusercontent.com/u/3360346/sbopenurl -O /usr/bin/sbopenurl --no-check-certificate
 					chmod +x /usr/bin/sbopenurl
@@ -385,7 +385,7 @@ start()
 							for package in "${missing[@]}"; do
 								if [[ "$package" != "zzuf" ]]; then
 									apt-get -y install "$package"
-									if [[ "$package" == "com.innoying.sbutils" ]]; then
+									if [[ "$package" == "io.github.awesomebing1.sbutils" ]]; then
 										#fix sbopenurl on ios9 + arm64
 										fixsbopenurl
 									fi
