@@ -492,19 +492,19 @@ start()
 			done
 		fi
 
-		#check document-root in server config
-		if (( $( egrep -c '(^server.document-root = "/var/www/"[[:space:]]*$|^server.document-root = "/var/www/"[[:space:]]+[#]+.*$)' "$lighttpdconf" ) != 1 )); then
-			echo "You must have your document root set up in /private/var/www/"
-			echo "Please modify your $lighttpdconf file accordingly."
-			return 1
-		fi
+# 		#check document-root in server config
+# 		if (( $( egrep -c '(^server.document-root = "/var/www/"[[:space:]]*$|^server.document-root = "/var/www/"[[:space:]]+[#]+.*$)' "$lighttpdconf" ) != 1 )); then
+# 			echo "You must have your document root set up in /private/var/www/"
+# 			echo "Please modify your $lighttpdconf file accordingly."
+# 			return 1
+# 		fi
 
-		#check server port is 80
-		if (( $( egrep -c '(^server.port = 80[[:space:]]*$|^server.port = 80[[:space:]]+[#]+.*$)' "$lighttpdconf" ) != 1 )); then
-			echo "You must have your server port set to 80."
-			echo "Please modify your $lighttpdconf file accordingly."
-			return 1
-		fi
+# 		#check server port is 80
+# 		if (( $( egrep -c '(^server.port = 80[[:space:]]*$|^server.port = 80[[:space:]]+[#]+.*$)' "$lighttpdconf" ) != 1 )); then
+# 			echo "You must have your server port set to 80."
+# 			echo "Please modify your $lighttpdconf file accordingly."
+# 			return 1
+# 		fi
 
 		#start server
 		exitstatus="1"
