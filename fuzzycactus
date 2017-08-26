@@ -304,7 +304,7 @@ start()
 		smart_touch "$wrkdir/tested.log"
 
 		#check dependencies
-		depends=( "com.innoying.sbutils" "bc" "lighttpd" "adv-cmds" "curl" "wget" "coreutils" "zzuf" )
+		depends=( "io.github.awesomebing1.sbutils" "bc" "lighttpd" "adv-cmds" "curl" "wget" "coreutils" "zzuf" )
 		checkdepends()
 		{
 			hasdepends=1
